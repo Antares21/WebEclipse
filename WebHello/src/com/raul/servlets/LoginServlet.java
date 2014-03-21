@@ -34,7 +34,9 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("\t\tSERVLET-USUARIO: " + user);
 		System.out.println("\t\tSERVLET-PASSWORD: " + pwd);
 		
-		response.sendRedirect("aplicacion/pagina_inicio.jsp");
+		String parametros = "?usuario="+user+"&clave="+pwd+"&nombre=Ra%20Antares&edad=21&telefono=60606060123";
+		
+		response.sendRedirect("datosPersonales.jsp"+parametros);
 	}
 
 	/**
