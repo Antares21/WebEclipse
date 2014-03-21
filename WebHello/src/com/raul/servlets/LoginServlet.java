@@ -1,11 +1,15 @@
 package com.raul.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.raul.database.PersonalData;
+import com.raul.database.jdbc.DAO_ImplJDBC;
 
 /**
  * Servlet implementation class LoginServlet
@@ -34,9 +38,27 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("\t\tSERVLET-USUARIO: " + user);
 		System.out.println("\t\tSERVLET-PASSWORD: " + pwd);
 		
-		String parametros = "?usuario="+user+"&clave="+pwd+"&nombre=Ra%20Antares&edad=21&telefono=60606060123";
 		
-		response.sendRedirect("datosPersonales.jsp"+parametros);
+		DAO_ImplJDBC dao = new DAO_ImplJDBC();
+		PersonalData pd = dao.getInfo(user, pwd);
+		System.out.println(pd);
+		String parametros = "";
+		if(pd!=null){
+			parametros += "id=" + pd.getId() + "&";
+			parametros += "usuario=" + pd.getUsuario() + "&";
+			parametros += "clave=" + pd.getClave() + "&";
+			parametros += "nombre=" + pd.getNombre() + "&";
+			parametros += "edad=" + pd.getEdad() + "&";
+			parametros += "telefono=" + pd.getTelefono();
+		}else{
+			parametros += "id=NOT FOUND&";
+			parametros += "usuario=NOT FOUND&";
+			parametros += "clave=NOT FOUND&";
+			parametros += "nombre=NOT FOUND&";
+			parametros += "edad=NOT FOUND&";
+			parametros += "telefono=NOT FOUND";
+		}
+		response.sendRedirect("datosPersonales.jsp"+ "?" +parametros);
 	}
 
 	/**

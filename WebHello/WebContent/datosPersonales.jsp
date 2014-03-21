@@ -29,5 +29,10 @@
 		<tr><td class="etiquetaControl">Telefono:</td>
 		    <td class="datos"><%=telefono %></td></tr>
 	</table>
+	
+	
+	<br/><br/>
+	<a href="index.html">Regresar</a>
+	
 </body>
 </html>
