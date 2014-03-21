@@ -30,7 +30,10 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String user = (String) request.getParameter("usuario");
 		String pwd = (String) request.getParameter("clave");
-		System.out.println("\t\tSERVLET: " + user + "-" + pwd);
+		
+		System.out.println("\t\tSERVLET-USUARIO: " + user);
+		System.out.println("\t\tSERVLET-PASSWORD: " + pwd);
+		
 		response.sendRedirect("aplicacion/pagina_inicio.jsp");
 	}
 
