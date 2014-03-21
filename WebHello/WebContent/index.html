@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Eclipse</title>
+<link rel="stylesheet" href="css/estilos.css"/>
+</head>
+<body>
+<h1>Primer ejemplo con HTML5 para <strong><code>Eclipse</code></strong></h1>
+
+<!--form action="login.jsp" method="get"-->
+<form action="accionLoginServlet" method="get">
+	<table>
+		<tr>
+	      <td><label for="usuario" class="etiquetaControl">Nombre de Usuario:</label></td>
+		  <td><input type="text" id="usuario" name="usuario" class="datos"/></td></tr>
+		<tr>
+		  <td><label for="clave" class="etiquetaControl">Contraseña:</label></td>
+		  <td><input type="password" id="clave" name="clave" class="datos"/></td></tr>
+		<tr>
+		  <td colspan="2" align="right">
+		  		<input type="submit" name="ENVIAR" value="Registrarse" class="etiquetaSubmit"/>
+		  		<input type="reset" name="BORRAR" value="Borrar" class="etiquetaReset"/>
+		  </td></tr>
+	</table>
+</form>
+</body>
+</html>

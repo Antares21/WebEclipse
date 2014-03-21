@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+
+h1, h2 {
+	color: navy;
+}
+
+body {
+	color: bleck;
+	background-color: #CCAACC;
+}
+
+
+/* formulario */
+.etiquetaControl {
+	color: #00FF44;
+	font-size: 20px;
+}
+
+.datos {
+	color: blue;
+	font-size: 20px;
+}
+
+.etiquetaSubmit {
+	color: #00FFFF;
+	font-size: 22px;
+}
+.etiquetaReset {
+	color: #FFFF00;
+	font-size: 22px;
+}
